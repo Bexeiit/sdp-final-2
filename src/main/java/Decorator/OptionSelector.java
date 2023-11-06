@@ -1,10 +1,12 @@
 package Decorator;
 
-import Decorator.AdditionalOptions;
-
 import java.util.Scanner;
 
-public class OptionSelector implements AdditionalOptions {
+public class OptionSelector extends OptionsDecorator implements AdditionalOptions{
+
+    public OptionSelector(AdditionalOptions additionalOptions) {
+        super(additionalOptions);
+    }
 
     public void body(Scanner cin) {
         System.out.println("Choose your ticket Class:\n" +
@@ -52,17 +54,20 @@ public class OptionSelector implements AdditionalOptions {
     }
 
     @Override
-    public void addBaggage() {
+    public String addBaggage() {
         System.out.println("You are using extra baggage.");
+        return null;
     }
 
     @Override
-    public void economyClass() {
+    public String economyClass() {
         System.out.println("Your ticket class - Economy.");
+        return null;
     }
 
     @Override
-    public void businessClass() {
+    public String businessClass() {
         System.out.println("Your ticket class - Business.");
+        return null;
     }
 }

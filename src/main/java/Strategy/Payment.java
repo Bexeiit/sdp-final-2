@@ -1,5 +1,7 @@
 package Strategy;
 
+import java.util.Random;
+
 public class Payment {
     PaymentStrategy paymentStrategy;
 

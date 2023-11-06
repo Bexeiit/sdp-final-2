@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     public static Connection ConnectionDB() throws SQLException {
-        String jdbcURL = "db.url";
-        String username = "db.username";
-        String password = "db.password";
+        String jdbcURL = "jdbc:postgresql://localhost:5432/postgres";
+        String username = "postgres";
+        String password = "aa";
 
             Connection connection = DriverManager.getConnection(jdbcURL, username, password);
         return connection;

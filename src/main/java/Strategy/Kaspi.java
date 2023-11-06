@@ -5,4 +5,5 @@ public class Kaspi implements PaymentStrategy{
     public void payTheBill() {
         System.out.println("Your payment was made with Kaspi application...");
     }
+
 }

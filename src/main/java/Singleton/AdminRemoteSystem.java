@@ -7,20 +7,21 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class AdminRemoteSystem {
-    public static void main(String[] args) throws SQLException {
+    public static void adminRemote() throws SQLException {
         Scanner cin = new Scanner(System.in);
 
         boolean isOff = true;
 
         while (isOff) {
 
-        System.out.println("""
+            System.out.println("""
                 Choose Action:
                 1. Add Flight
                 2. Flight Schedule
                 3. Get User List
-                4. Ban user\n\n""");
-        int choice = cin.nextInt();
+                4. Ban user
+                0. Exit\n\n""");
+            int choice = cin.nextInt();
 
             switch (choice) {
                 case 1:
@@ -38,12 +39,12 @@ public class AdminRemoteSystem {
                     break;
                 case 0:
                     isOff = false;
+                    break;
                 default:
                     System.out.println("Wrong option.");
                     choice = cin.nextInt();
             }
 
         }
-
     }
 }

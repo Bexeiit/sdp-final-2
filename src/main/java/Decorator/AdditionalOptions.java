@@ -1,7 +1,7 @@
 package Decorator;
 
 public interface AdditionalOptions {
-    public void addBaggage();
-    public void economyClass();
-    public void businessClass();
+    public String addBaggage();
+    public String economyClass();
+    public String businessClass();
 }

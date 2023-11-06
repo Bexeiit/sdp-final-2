@@ -1,5 +1,7 @@
 package Singleton.Users;
 
+import Database.DatabaseConnection;
+
 import java.sql.*;
 import java.util.Scanner;
 
@@ -18,7 +20,7 @@ public class Users {
 
     public void showUsers() {
         try{
-            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Flight-Registration-System", "postgres", "1");
+            Connection connection = DatabaseConnection.ConnectionDB();
 
             Statement statement = connection.createStatement();
             String sql = "SELECT * FROM users";
@@ -52,7 +54,7 @@ public class Users {
         while (isClearEmail) {
 
             try {
-                Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Flight-Registration-System", "postgres", "1");
+                Connection connection = DatabaseConnection.ConnectionDB();
                 String sql = "DELETE FROM users WHERE email = ?";
                 PreparedStatement ps = connection.prepareStatement(sql);
                 ps.setString(1, email);
